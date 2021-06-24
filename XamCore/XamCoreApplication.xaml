@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+    xmlns:views="clr-namespace:XamCore.View"
+    x:Class="XamCore.XamCoreApplication">
+    <Application.Resources>
+
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        <converters:ItemTappedEventArgsConverter x:Key="ItemTappedEventArgsConverter" />
+        <converters:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+        <converters:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
+        <converters:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter" />
+
+        <Color x:Key="Primary">
+            #034748
+        </Color>
+        <Color x:Key="PrimaryDark">
+            #001020
+        </Color>
+        <Color x:Key="Accent">
+            #11B5E4
+        </Color>
+        <Color x:Key="Accent2">
+            #1481BA
+        </Color>
+
+
+        <Style
+            ApplyToDerivedTypes="True"
+            CanCascade="True"
+            TargetType="StackLayout">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="Spacing" Value="0" />
+        </Style>
+
+        <Style
+            ApplyToDerivedTypes="True"
+            CanCascade="True"
+            TargetType="ScrollView">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        </Style>
+
+        <Style
+            ApplyToDerivedTypes="True"
+            CanCascade="True"
+            TargetType="Grid">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="ColumnSpacing" Value="0" />
+        </Style>
+
+        <Style
+            ApplyToDerivedTypes="True"
+            CanCascade="True"
+            TargetType="views:TransparentNavigationPage">
+            <Setter Property="BarTextColor" Value="White" />
+        </Style>
+
+        <Style
+            ApplyToDerivedTypes="True"
+            CanCascade="True"
+            TargetType="ActivityIndicator">
+            <Setter Property="Color" Value="{StaticResource Primary}" />
+            <Setter Property="IsVisible" Value="{Binding IsBusy}" />
+            <Setter Property="IsRunning" Value="{Binding IsBusy}" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#272667FF" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</prism:PrismApplication>

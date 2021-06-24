@@ -1,0 +1,166 @@
+<MasterDetailPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XamCore.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:model="clr-namespace:XamCore.Models"
+    xmlns:vm="clr-namespace:XamCore.ViewModel"
+    x:Class="XamCore.View.MenuPage"
+    x:DataType="vm:MenuPageViewModelBase">
+
+    <MasterDetailPage.Flyout>
+
+        <ContentPage
+            Title="Menu"
+            BackgroundColor="White"
+            IconImageSource="{OnPlatform iOS='menu'}">
+
+            <StackLayout>
+                <AbsoluteLayout
+                    BackgroundColor="#2667FF"
+                    HeightRequest="300"
+                    IsClippedToBounds="True">
+
+                    <Ellipse
+                        AbsoluteLayout.LayoutBounds="-0.32, 0.8, 2.1, 4.2"
+                        AbsoluteLayout.LayoutFlags="All"
+                        Fill="#DD3F8EFC" />
+
+                    <Ellipse
+                        AbsoluteLayout.LayoutBounds="-0.5, 1, 2, 4"
+                        AbsoluteLayout.LayoutFlags="All"
+                        Fill="#DD6EB1FF" />
+
+                    <Grid
+                        AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        ColumnSpacing="0"
+                        RowSpacing="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="24" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+
+                        <ffimageloading:CachedImage
+                            Grid.Row="0"
+                            Grid.RowSpan="3"
+                            Grid.Column="1"
+                            Aspect="AspectFit"
+                            DownsampleToViewSize="True"
+                            Source="http://loremflickr.com/600/600/nature?filename=simple.jpg"
+                            VerticalOptions="Center">
+
+                            <ffimageloading:CachedImage.Transformations>
+                                <fftransformations:CircleTransformation />
+                            </ffimageloading:CachedImage.Transformations>
+
+                        </ffimageloading:CachedImage>
+
+                        <Ellipse
+                            Grid.Row="0"
+                            Grid.RowSpan="3"
+                            Grid.Column="1"
+                            Aspect="Uniform"
+                            HeightRequest="70"
+                            HorizontalOptions="CenterAndExpand"
+                            Stroke="#DDFFFFFF"
+                            StrokeThickness="4"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="70" />
+
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            VerticalOptions="Center">
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Jake Barnby"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+
+                            <Label
+                                FontSize="14"
+                                Text="jakeb994@gmail.com"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </Grid>
+
+                </AbsoluteLayout>
+
+                <CollectionView
+                    Margin="16"
+                    ItemsSource="{Binding Data}"
+                    SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                    SelectionChangedCommand="{Binding NavigateCommand}"
+                    SelectionMode="Single"
+                    VerticalOptions="FillAndExpand">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:MenuItem">
+                            <Frame
+                                Padding="13"
+                                CornerRadius="12"
+                                HasShadow="False">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+
+                                    <controls:IconView
+                                        Margin="0,0,16,0"
+                                        Foreground="Black"
+                                        Source="{Binding IconImageSource}" />
+
+                                    <Label
+                                        FontSize="17"
+                                        Text="{Binding Title}"
+                                        TextColor="Black"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <StackLayout
+                    Margin="0,0,0,5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand">
+
+                    <ffimageloading:CachedImage
+                        DownsampleToViewSize="True"
+                        HeightRequest="40"
+                        Source="icon"
+                        WidthRequest="40">
+
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+
+                    </ffimageloading:CachedImage>
+
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Text="CryptoPD"
+                        TextColor="Black" />
+
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Flyout>
+</MasterDetailPage>

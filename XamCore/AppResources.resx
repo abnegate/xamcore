@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<!-- Menu items -->
+	<data name="Settings">
+		<value>Settings</value>
+	</data>
+	<data name="Help">
+		<value>Help</value>
+	</data>
+	<!-- The classics -->
+	<data name="Ok">
+		<value>OK</value>
+	</data>
+	<data name="Done">
+		<value>Done</value>
+	</data>
+	<data name="Cancel">
+		<value>Cancel</value>
+	</data>
+	<data name="Save">
+		<value>Save</value>
+	</data>
+	<data name="Success">
+		<value>Success</value>
+	</data>
+	<data name="Failure">
+		<value>Failure</value>
+	</data>
+	<data name="Sorry">
+		<value>Sorry</value>
+	</data>
+	<data name="NoData">
+		<value>You have no data access. Please try again when in range of data or wifi</value>
+	</data>
+	<!-- Errors -->
+	<data name="ErrorApi">
+		<value>Something went wrong, please try again later.</value>
+	</data>
+	<data name="ErrorTimeout">
+		<value>Something went wrong, please try again later.</value>
+	</data>
+	<data name="ErrorUnknown">
+		<value>Something went wrong, please try again later.</value>
+	</data>
+</root>

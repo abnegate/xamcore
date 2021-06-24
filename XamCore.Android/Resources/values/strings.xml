@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="permission_storage">Storage permission is needed to choose photos from your device.</string>
+</resources>
